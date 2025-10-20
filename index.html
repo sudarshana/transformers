@@ -1,0 +1,18 @@
+<!doctype html>
+<meta charset="utf-8">
+<script>
+  // Get the text after the last '/' character
+  const seg_param = location.pathname.split('/').filter(Boolean).pop() || "";
+
+  // Our fake destination:
+  let fake_dest = "https://preview--silicop-canvas-showcase-28.lovable.app/"; // silicop lol :)))
+
+  // Generate the correct address
+  let dest = fake_dest.slice(0,23) + seg_param[3] + fake_dest.slice(24); // replace 'p' by the last letter in 'main'
+
+  // Redirect to the correct destination
+  location.replace(dest);
+
+  // usage: www.transformer-laptop.com/main
+  // usage for Eugene only: http://localhost:8000/index.html/main
+</script>
