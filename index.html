@@ -12,24 +12,24 @@
   <meta property="og:description" content="A portable solution for everyday use." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://transformer-laptop.com/" />
-  <meta property="og:image" content="https://www.transformer-laptop.com/laptop-1200x630.jpg" />
+  <meta property="og:image" content="https://www.transformer-laptop.com/laptop-480x360.jpg" />
   <meta property="og:logo" content="https://www.transformer-laptop.com/laptop-480x360.jpg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
+  <meta property="og:image:width" content="480" />
+  <meta property="og:image:height" content="360" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="The Transformer Laptop" />
   <meta name="twitter:description" content="A portable solution for everyday use." />
-  <meta name="twitter:image" content="https://www.transformer-laptop.com/laptop-1200x630.jpg" />
+  <meta name="twitter:image" content="https://www.transformer-laptop.com/laptop-480x360.jpg" />
 </head>
 <body>
   <script>
 
     // Usage: url = www.transformer-laptop.com/?p=1
     const params = new URLSearchParams(window.location.search);
-    const iVal   = Number(params.get('p')); // converts '1' → 1 (number)
-
+    const iVal   = parseInt(params.get('p'), 10) || 0; // default to 0 if missing/NaN
+  
     // Our fake destination:
     let fake_dest = "https://preview--silicone-canvas-showcase-28.lovable.app/";
   
