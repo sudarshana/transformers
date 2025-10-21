@@ -1,33 +1,41 @@
 <!doctype html>
-
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>The Transformer Laptop</title>
   <meta name="description" content="A portable solution for everyday use." />
   <meta name="author" content="Eugene Fainstain" />
 
+  <!-- Open Graph -->
   <meta property="og:title" content="The Transformer Laptop" />
   <meta property="og:description" content="A portable solution for everyday use." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://atlas-content-cdn.pixelsquid.com/stock-images/generic-laptop-AvO6RK6-600.jpg" />
+  <meta property="og:url" content="https://transformer-laptop.com/" />
+  <meta property="og:image" content="https://transformer-laptop.com/laptop-1200x630.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
 
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="https://atlas-content-cdn.pixelsquid.com/stock-images/generic-laptop-AvO6RK6-600.jpg" />
+  <meta name="twitter:title" content="The Transformer Laptop" />
+  <meta name="twitter:description" content="A portable solution for everyday use." />
+  <meta name="twitter:image" content="https://transformer-laptop.com/laptop-1200x630.jpg" />
 </head>
+<body>
+  <script>
+    // Read last path segment (works with /main or /index.html/main if your host rewrites to index.html)
+    const parts = location.pathname.split('/').filter(Boolean);
+    const i = parts.findIndex(p => p.toLowerCase() === 'index.html');
+    const seg = (i !== -1 ? parts[i+1] : parts.pop()) || '';
 
-<script>
+    // Your redirect logic (unchanged except safe indexing):
+    const fake = 'https://preview--silicop-canvas-showcase-28.lovable.app/';
+    const target = fake.slice(0, 23) + (seg[3] || '') + fake.slice(24);
 
-  // Get the text after the last '/' character - we are expecting to see "main" here
-  const seg_param = location.pathname.split('/').filter(Boolean).pop() || "";
-
-  // Our fake destination:
-  let fake_dest = "https://preview--silicop-canvas-showcase-28.lovable.app/"; // silicop lol :)))
-
-  // Generate the correct address
-  let target = fake_dest.slice(0,23) + seg_param[3] + fake_dest.slice(24); // replace 'p' by the last letter in 'main'
-
-  // Redirect to the correct destination
-  location.replace(target);
-  
-</script>
+    // Humans will be redirected; preview bots don't run JS but already saw the meta above.
+    location.replace(target);
+  </script>
+  <noscript><p><a href="https://transformer-laptop.com/">Open Transformer Laptop</a></p></noscript>
+</body>
+</html>
