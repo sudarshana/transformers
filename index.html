@@ -3,7 +3,7 @@
 <title>Show redirection address</title>
 <script>
 
-  // Get the text after the last '/' character
+  // Get the text after the last '/' character - we are expecting to see "main" here
   const seg_param = location.pathname.split('/').filter(Boolean).pop() || "";
 
   // Our fake destination:
@@ -14,21 +14,5 @@
 
   // Redirect to the correct destination
   location.replace(target);
-
-  // This is for debugging only:
-  document.addEventListener("DOMContentLoaded", () => {
-    const param = document.getElementById("param");
-    param.innerHTML = `<a href="${seg_param}">${seg_param}</a>`;
-    const out = document.getElementById("out");
-    out.innerHTML = `<a href="${target}">${target}</a>`;
-  });
-
-  // usage: www.transformer-laptop.com/main
-  // usage for Eugene only:
-  //        http://localhost:8000/index.html/main
-
+  
 </script>
-<body>
-  <div id="param" style="font:16px system-ui,sans-serif"></div>
-  <div id="out" style="font:16px system-ui,sans-serif"></div>
-</body>
