@@ -17,6 +17,8 @@
 
   // This is for debugging only:
   document.addEventListener("DOMContentLoaded", () => {
+    const param = document.getElementById("param");
+    param.innerHTML = <a href="${seg_param}">${seg_param}</a>;
     const out = document.getElementById("out");
     out.innerHTML = <a href="${target}">${target}</a>;
   });
@@ -27,6 +29,7 @@
 
 </script>
 <body>
+  <div id="param" style="font:16px system-ui,sans-serif"></div>
   <div id="out" style="font:16px system-ui,sans-serif"></div>
 </body>
 preview--silicop-canvas-showcase-28.lovable.app
