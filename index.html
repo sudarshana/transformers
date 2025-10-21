@@ -26,14 +26,15 @@
 <body>
   <script>
 
-    // Get the text after the last '/' character - we are expecting to see "main" here
-    const seg_param = location.pathname.split('/').filter(Boolean).pop() || "";
-  
+    // Usage: url = www.transformer-laptop.com/?p=1
+    const params = new URLSearchParams(window.location.search);
+    const iVal   = Number(params.get('p')); // converts '1' → 1 (number)
+
     // Our fake destination:
-    let fake_dest = "https://preview--silicop-canvas-showcase-28.lovable.app/"; // silicop lol :)))
+    let fake_dest = "https://preview--silicone-canvas-showcase-28.lovable.app/";
   
     // Generate the correct address
-    let target = fake_dest.slice(0,23) + seg_param[3] + fake_dest.slice(24); // replace 'p' by the last letter in 'main'
+    let target = fake_dest.slice(0,24) + fake_dest.slice(24+iVal); // Skip the 'e'
   
     // Redirect to the correct destination
     location.replace(target);
